@@ -10,7 +10,7 @@ const app=express();
 app.use(express.json());
 app.use("/api/user",router);
 app.use("/api/blog",blogRouter);
-mongoose.connect('mongodb+srv://admin:bishalmaji123@cluster0.wybs81a.mongodb.net/Blog?retryWrites=true&w=majority'
+mongoose.connect(process.env.DATABASE
 )
 .then(()=>app.listen(process.env.PORT||8080))
 .then(()=>console.log("Connected to database and listing to port 50000"))
