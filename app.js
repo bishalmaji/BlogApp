@@ -12,7 +12,7 @@ app.use("/api/user",router);
 app.use("/api/blog",blogRouter);
 mongoose.connect('mongodb+srv://admin:bishalmaji123@cluster0.wybs81a.mongodb.net/Blog?retryWrites=true&w=majority'
 )
-.then(()=>app.listen(8000))
+.then(()=>app.listen(process.env.PORT||8080))
 .then(()=>console.log("Connected to database and listing to port 50000"))
 .catch((err)=>console.log(err));
 
