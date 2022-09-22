@@ -2,8 +2,9 @@ import express from 'express';
 import mongoose from 'mongoose';
 import blogRouter from './routes/blog-routes';
 import router from './routes/user-routes';
+import * as dotenv from 'dotenv' // see https://github.com/motdotla/dotenv#how-do-i-use-dotenv-with-import
+dotenv.config();
 
-require('dotenv').config({ path: 'DATABASE' });
 const app=express();
 app.use(express.json());
 app.use("/api/user",router);
