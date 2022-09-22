@@ -10,6 +10,10 @@ const app=express();
 app.use(express.json());
 app.use("/api/user",router);
 app.use("/api/blog",blogRouter);
+app.get('/',(req,res)=>{
+    res.send('<h1>Welcome to Blog App API</h1>M');
+    res.end();
+})
 mongoose.connect(process.env.DATABASE
 )
 .then(()=>app.listen(process.env.PORT||8080))
