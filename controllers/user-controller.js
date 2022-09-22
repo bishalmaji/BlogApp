@@ -2,26 +2,15 @@ import User from "../model/User";
 import bcrypt from 'bcryptjs';
 export const getAllUser= async(req,res,next)=>{
     let users;
-    let myarr;
     try{
         users=await User.find();
     }catch(err){
         console.log(err);
     }
     if(!users){
-    
         return res.status(404).json({message:"No user found"});
     }
-    const response=await users.json();
-    for(let i=0;i<response.length;i++){
-     myarr[i]['id']=response[i]['user']['id'];
-     myarr[i]['name']=response[i]['user']['name'];
-     myarr[i]['email']=response[i]['user']['email'];
-     myarr[i]['password']=response[i]['user']['password'];
-     myarr[i]['v']=response[i]['user']['v'];
-
-    }
-    return res.status(200).json({myarr});
+    return res.status(200).json({users});
 };
 export const signup=async(req,res,next)=>{
        const {name,email,password}=req.body;
