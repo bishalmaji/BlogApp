@@ -13,7 +13,7 @@ app.use("/api/blog",blogRouter);
 mongoose.connect(process.env.DATABASE
 )
 .then(()=>app.listen(process.env.PORT||8080))
-.then(()=>console.log("Connected to database and listing to port 50000"))
+.then(()=>console.log('Example app listening on port ${port}!'))
 .catch((err)=>console.log(err));
 
 
