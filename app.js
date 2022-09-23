@@ -2,7 +2,7 @@ import express from 'express';
 import mongoose from 'mongoose';
 import blogRouter from './routes/blog-routes';
 import router from './routes/user-routes';
-import * as dotenv from 'dotenv' // see https://github.com/motdotla/dotenv#how-do-i-use-dotenv-with-import
+import * as dotenv from 'dotenv'
 dotenv.config();
 
 const app=express();
@@ -11,7 +11,7 @@ app.use("/api/user",router);
 app.use("/api/blog",blogRouter);
 
 app.get('/',(req,res)=>{
-    res.send('<h1>Welcome to Blog App API</h1>M');
+    res.send('<h1>Welcome to Blog App API Freatures-Signin, Signup, Add blog,Get all blogs, Get user blogs, Update a blog, Delete a blog</h1>M');
     res.end();
 });
 mongoose.connect(process.env.DATABASE
